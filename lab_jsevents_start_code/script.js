@@ -18,14 +18,21 @@ enter.addEventListener("submit", (event) => {
         if (checkbox.checked){
             console.log("checked")
             newItem.style.color = "grey"
+            completedList.appendChild(newItem);
+            completedList.appendChild(deleteButton);
+            completedList.appendChild(checkbox);
         } else {
             newItem.style.color = "black"
+            list.appendChild(checkbox);
+            list.appendChild(newItem);
+            list.appendChild(deleteButton);
         }
         console.log(checkbox)
     })
     deleteButton.addEventListener("click", () => {
         list.removeChild(newItem);
         list.removeChild(deleteButton);
+        list.removeChild(checkbox);
     });
 })
 
