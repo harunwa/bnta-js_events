@@ -1,26 +1,24 @@
 const enter = document.querySelector("#todo-form")
 const list = document.querySelector("#list");
 const selectButton = document.querySelector("#show-date")
-const header = document.querySelector(".header")
-
-
 
 enter.addEventListener("submit", (event) => {
     event.preventDefault();
     const newItem = document.createElement("li");
-    const newButton = document.createElement("button", );
+    const deleteButton = document.createElement("button");
     newItem.innerText = event.target["new-todo"].value;
-    newButton.innerText = "delete " + event.target["new-todo"].value;
+    deleteButton.innerText = "delete " + event.target["new-todo"].value;
     list.appendChild(newItem);
-    list.appendChild(newButton);
-    newButton.addEventListener("click", (event) => {
+    list.appendChild(deleteButton);
+    deleteButton.addEventListener("click", () => {
         list.removeChild(newItem);
-        list.removeChild(newButton);
+        list.removeChild(deleteButton);
     });
 })
 
 selectButton.addEventListener("click", () => {
     const dateTag = document.querySelector("#date")
     dateTag.innerText = Date();
-
 })
+
+
