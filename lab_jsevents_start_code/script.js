@@ -13,7 +13,7 @@ enter.addEventListener("submit", (event) => {
     deleteButton.innerText = "delete " + event.target["new-todo"].value;
     list.appendChild(checkbox);
     list.appendChild(newItem);
-    list.appendChild(deleteButton);
+    list.appendChild(deleteButton); 
     checkbox.addEventListener("click", () =>{
         if (checkbox.checked){
             console.log("checked")
